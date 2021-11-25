@@ -5,8 +5,8 @@ import store from './store'
 import 'vant/lib/index.css';
 
 import lxxUi from '../packages'
-Vue.use(lxxUi,{
-  components:["lButton","lInput"]
+Vue.use(lxxUi, {
+  components: ["lButton", "lInput"]
 })
 
 Vue.config.productionTip = false
@@ -16,3 +16,4 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
+

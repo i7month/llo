@@ -1,7 +1,7 @@
 ### 安装
 ```bash
-$ npm install l-public-vue vant --save
-$ yarn add l-public-vue vant
+$ npm install llo vant --save
+$ yarn add llo vant
 ```
 
 #### 安装此组件需要[vant](https://youzan.github.io/vant/#/zh-CN/quickstart)样式配合
@@ -13,8 +13,8 @@ import 'vant/lib/index.css';
 ### 按需引入(推荐)
 ```javascript
 // main.js
-import lPublic from 'l-public-vue/lib/l-public-vue.umd.min.js'
-import 'l-public-vue/lib/l-public-vue.css'
+import lPublic from 'llo'
+import 'llo/lib/llo.css'
 import 'vant/lib/index.css';
 Vue.use(lPublic,{
   compontnts:['lButton','lInput' // ...]
@@ -24,8 +24,8 @@ Vue.use(lPublic,{
 ### 全局引入
 ```javascript
 // main.js
-import lPublic from 'l-public-vue/lib/l-public-vue.umd.min.js'
-import 'l-public-vue/lib/l-public-vue.css'
+import lPublic from 'llo'
+import 'llo/lib/llo.css'
 import 'vant/lib/index.css';
 Vue.use(lPublic)
 ```
@@ -73,4 +73,80 @@ try {
 } catch (error) {
   console.log(error, " error");
 }
+```
+
+### 节流
+
+>
+> `throttle` 内有回调函数 2秒只能触发第一次 `props` 完事返回 `end`
+>
+
+```vue
+<template>
+  <button @click="submit">提交</button>
+</template>
+
+<script>
+import _ from 'llo/utils'
+export default {
+  methods: {
+    submit: _.throttle(props => {
+      console.log(props)
+    },2000)
+  }
+}
+</script>
+```
+
+### 防抖
+
+>
+> `debounce` 内有回调函数 1秒只能触发最后一次 完事后`props`返回 `end` 
+>
+
+```vue
+<template>
+  <button @click="submit">提交</button>
+</template>
+
+<script>
+import _ from 'llo/utils'
+export default {
+  methods: {
+    submit: _.debounce(props => {
+      console.log(props)
+    },1000)
+  }
+}
+</script>
+```
+
+### 防抖(优化)
+>
+> `debounce` 内有回调函数 1秒只能触发最后一次 (如用户一直触发此函数无论是否到2s props都会返回`auto`) 完事后`props`返回`end` 
+>
+
+```vue
+<template>
+  <div>
+    <button @click="submit" v-for="item in 300" :key="item">提交</button>
+  </div>
+</template>
+
+<script>
+import _ from 'llo/utils'
+export default {
+  mounted () {
+    // 监听滚动条滚动
+    window.addEventListener("scroll", _.betterDebounce(props => {
+      // props === 'auto' 为1秒强制触发 props === 'end' 结束了(用户没有在操作)
+      console.log(props);
+    }, 1000));
+  },
+  destroyed () {
+    // 删除滚动条监听
+    window.removeEventListener("scroll", this.betterDebounce);
+  }
+}
+</script>
 ```
