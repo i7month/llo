@@ -145,7 +145,7 @@ export default {
   },
   destroyed () {
     // 删除滚动条监听
-    window.removeEventListener("scroll", this.betterDebounce);
+    window.removeEventListener("scroll", _.betterDebounce);
   }
 }
 </script>
