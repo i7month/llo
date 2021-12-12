@@ -4,8 +4,8 @@ import router from './router'
 import store from './store'
 import 'vant/lib/index.css';
 
-import lxxUi from '../packages'
-Vue.use(lxxUi, {
+import i7monthUi from '../packages'
+Vue.use(i7monthUi, {
   components: ["lButton", "lInput"]
 })
 
