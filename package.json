@@ -1,17 +1,17 @@
 {
-  "name": "xxo",
-  "version": "0.1.2",
-  "description": "webpack To optimize the",
-  "main": "lib/xxo.umd.min.js",
+  "name": "llo",
+  "version": "0.2.5",
+  "description": "Use of company proprietary projects",
+  "main": "lib/llo.umd.min.js",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lib": "vue-cli-service build --target lib --name xxo --dest lib packages/index.js"
+    "lib": "vue-cli-service build --target lib --name llo --dest lib packages/index.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "xxo": "^0.1.5",
+    "llo": "^0.1.5",
     "vant": "^2.12.33",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/i7month/xxo.git"
+    "url": "https://github.com/i7month/llo.git"
   },
   "browserslist": [
     "> 1%",
