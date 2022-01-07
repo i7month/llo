@@ -1,6 +1,6 @@
 {
   "name": "llo",
-  "version": "0.2.5",
+  "version": "0.2.7",
   "description": "Use of company proprietary projects",
   "main": "lib/llo.umd.min.js",
   "private": false,
