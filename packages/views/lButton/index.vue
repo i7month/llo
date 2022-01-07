@@ -1,25 +1,25 @@
 <template>
-  <button class="l-button" @click="$emit('click',$event)">我是测试的按钮组件</button>
+  <van-button v-bind="customizedAttrs" :size="size" v-on="$listeners" type="primary"><slot /></van-button>
 </template>
-
 <script>
 export default {
   name: "lButton",
-  components: {},
-  props: {},
-  data() {
-    return {};
+  inheritAttrs: false,
+  props: {
+    size: {
+      type: String,
+      default: "large",
+    },
   },
-  watch: {},
-  created() {},
-  mounted() {},
-  computed: {},
-  methods: {
-  },
+  computed: {
+    customizedAttrs() {
+      return {
+        // 支持传过来的size覆盖默认的size
+        ...this.$attrs,
+      };
+    },
+  }
 };
 </script>
 <style lang="scss" scoped>
-.l-button {
-  background: green;
-}
 </style>
