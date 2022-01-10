@@ -1,12 +1,5 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">button｜input</router-link>
-      <br>
-      <router-link to="/about">节流防抖</router-link>
-      <br>
-      <router-link to="/waterfall">瀑布流</router-link>
-    </div>
     <router-view/>
   </div>
 </template>

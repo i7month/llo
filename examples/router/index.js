@@ -11,14 +11,24 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import('../views/About.vue')
+    path: '/throttleAntiShake',
+    name: 'throttleAntiShake',
+    component: () => import('../views/throttleAntiShake/throttleAntiShake.vue')
   },
   {
     path: '/waterfall',
     name: 'waterfall',
-    component: () => import('../views/waterfall.vue')
+    component: () => import('../views/waterfall/waterfall.vue')
+  },
+  {
+    path: '/button',
+    name: 'button',
+    component: () => import('../views/button/button.vue')
+  },
+  {
+    path: '/input',
+    name: 'input',
+    component: () => import('../views/input/input.vue')
   }
 ]
 

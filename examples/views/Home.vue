@@ -1,22 +1,25 @@
 <template>
   <div class="home">
-    <lButton @click="send" size="large">我是测试的按钮</lButton>
-    <l-input v-model="value" label="文本" placeholder="请输入用户名"></l-input>
+    <div class="nav">
+      <button @click="$router.push('/button')">button</button>
+      <br>
+      <button @click="$router.push('/input')">input</button>
+      <br>
+      <button @click="$router.push('/throttleAntiShake')">节流防抖</button>
+      <br>
+      <button @click="$router.push('/waterfall')">瀑布流</button>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Home",
-  data() {
-    return {
-      value: "",
-    };
-  },
-  methods: {
-    send(e) {
-      console.log(e);
-    },
-  },
+  name: "Home"
 };
 </script>
+<style lang="scss" scoped>
+.nav{
+  display: flex;
+  flex-wrap: wrap;
+}
+</style>

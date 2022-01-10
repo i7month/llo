@@ -4,8 +4,9 @@
   </div>
 </template>
 <script>
-import _ from "../../utils";
+import _ from "../../../utils";
 export default {
+  name:'throttleAntiShake',
   mounted() {
     // 监听滚动条滚动
     // window.addEventListener("scroll", util.debounce((props) => {
