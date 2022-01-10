@@ -4,23 +4,17 @@ import utils from '../utils' // 工具类（节流 防抖）
 
 const install = function (Vue, options) {
   // 按需引入
-  if(options && options.components){
+  if (options && options.components) {
     const { components } = options
-    console.log(components);
-    console.log(COMPONENTS);
     components.forEach(component => {
       COMPONENTS.forEach(COMPONENT => {
-        // console.log(component);
-        // console.log(COMPONENT.name);
-        if(component === COMPONENT.name){
-          Vue.component(COMPONENT.name,COMPONENT)
-        }
+        if (component === COMPONENT.name) Vue.component(COMPONENT.name, COMPONENT)
       })
     })
-  }else{ 
+  } else {
     // 全局引入
-    COMPONENTS.forEach(COMPONENT =>{
-      Vue.component(COMPONENT.name,COMPONENT)
+    COMPONENTS.forEach(COMPONENT => {
+      Vue.component(COMPONENT.name, COMPONENT)
     })
   }
   // 原型方法

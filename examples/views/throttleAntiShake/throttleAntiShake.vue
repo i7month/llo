@@ -12,16 +12,14 @@ export default {
     // window.addEventListener("scroll", util.debounce((props) => {
     //   console.log(props);
     // },1000,scroll));
-    window.addEventListener("scroll", _.betterDebounce((props) => {
-      console.log(props);
-    },1000));
+    window.addEventListener("scroll", this.send);
   },
   destroyed() {
     // 删除滚动条监听
-    window.removeEventListener("scroll", _.betterDebounce);
+    window.removeEventListener("scroll", this.send);
   },
   methods: {
-    send: _.throttle((props) => {
+    send: _.betterDebounce((props) => {
       console.log(props);
     }, 1000),
   },
